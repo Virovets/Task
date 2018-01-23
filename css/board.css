@@ -1,0 +1,12 @@
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.board {
+    width: 150px;
+    height: 500px;
+    border: 2px solid red;
+}
