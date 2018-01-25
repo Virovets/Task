@@ -1,13 +1,16 @@
-html,
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
-.header {
+header {
     height: 80px;
     background-color: #DB96C4;
     width: calc(100% - 200px);
