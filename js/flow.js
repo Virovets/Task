@@ -13,11 +13,11 @@ xhr.send(body);
 
 window.onload = function() {
 
-    var add = document.querySelectorAll('.addTask');
+    var addTask = document.querySelectorAll('.addTask');
     var scrolltask = document.querySelectorAll('.scrolltask');
 
-    for (var i = 0; i < add.length; i++) {
-        add[i].addEventListener('click', onAddTask.bind(null, i))
+    for (var i = 0; i < addTask.length; i++) {
+        addTask[i].addEventListener('click', onAddTask.bind(null, i))
     }
 
     function onAddTask(pos, event) {
@@ -25,4 +25,13 @@ window.onload = function() {
             target: scrolltask[pos]
         });
     }
+
+    var addBoard = document.getElementById('addBoard');
+
+    addBoard.addEventListener('click', function() {
+        var board = document.querySelector('.board');
+        var newBoard = board.cloneNode(true)
+        board.parentNode.insertBefore(newBoard, board.nextSibling);
+    })
+
 }
