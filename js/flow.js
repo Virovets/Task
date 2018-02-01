@@ -28,10 +28,12 @@ window.onload = function() {
 
     var addBoard = document.getElementById('addBoard');
 
-    addBoard.addEventListener('click', function() {
-        var board = document.querySelector('.board');
-        var newBoard = board.cloneNode(true)
-        board.parentNode.insertBefore(newBoard, board.nextSibling);
-    })
+    addBoard.addEventListener('click', onAddBoard.bind(null))
+
+    function onAddBoard(pos, event) {
+        addBoardToMain({
+            // target: main
+        });
+    }
 
 }
