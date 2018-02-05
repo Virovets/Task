@@ -1,17 +1,35 @@
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    if (xhr.readyState != 4) { return; }
+function getData() {
+
+    return new Promise(function(resolve, reject) {
+
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState != 4) { return; }
+
+            resolve(xhr.responseText);
+        }
+        xhr.open('GET', 'data.json', true);
+
+        var body = undefined;
+
+        xhr.send(body);
+    })
 }
 
 
-xhr.open('GET', 'data.json', true);
-
-var body = undefined;
-
-xhr.send(body);
 
 
 window.onload = function() {
+
+    getData()
+        .then(function(response) {
+            var main = document.querySelector('.content');
+            var model = JSON.parse(response);
+            console.log(model)
+
+            renderBoards(main, model.data.boards);
+        })
+
 
     var addTask = document.querySelectorAll('.addTask');
     var scrolltask = document.querySelectorAll('.scrolltask');
@@ -30,10 +48,17 @@ window.onload = function() {
 
     addBoard.addEventListener('click', onAddBoard.bind(null))
 
-    function onAddBoard(pos, event) {
-        addBoardToMain({
-            // target: main
-        });
+    function onAddBoard() {
+        var main = document.querySelector('.content');
+        addBoardToMain(main, {});
+        console.log('hi')
     }
+
+    var checked = document.querySelector('.input');
+
+    checked.addEventListener('click', function() {
+        addBoard.classList.toggle("hidden");
+    })
+
 
 }

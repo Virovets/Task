@@ -1,15 +1,37 @@
 {
-    "boards": {
-        "board1": {
-            "id": "1",
-            "name": "first"
-        },
-        "board2": {
-            "id": "2",
-            "name": "second"
+    "info": {},
+    "data": {
+        "boards": {
+            "1": {
+                "id": 1,
+                "name": "to do",
+                "maxSize": 10,
+                "tasks": {
+                    "101": {
+                        "id": 101,
+                        "title": "t1"
+                    },
+                    "102": {
+                        "id": 102,
+                        "title": "t2"
+                    }
+                }
+            },
+            "2": {
+                "id": 2,
+                "name": "in progress",
+                "maxSize": 10,
+                "tasks": {
+                    "103": {
+                        "id": 103,
+                        "title": "t3"
+                    },
+                    "104": {
+                        "id": 104,
+                        "title": "t4"
+                    }
+                }
+            }
         }
-    },
-    "task": {
-        "name": "task"
     }
 }

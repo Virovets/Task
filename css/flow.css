@@ -23,15 +23,9 @@ header {
     margin: 0;
 }
 
-
-/* .sidebar {
-    height: 100%;
-    width: 100px;
-    top: 0;
-    right: 0;
-    background-color: rgb(99, 123, 172);
-    position: fixed;
-} */
+.hidden {
+    visibility: hidden;
+}
 
 #addBoard {
     margin-top: 25px;

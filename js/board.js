@@ -1,8 +1,13 @@
-function addBoardToMain() {
-    var main = document.querySelector('.content')
+function addBoardToMain(target, board) {
     var newBoard = document.createElement('div');
     newBoard.className = 'board';
-    main.insertBefore(newBoard, main.lastElementChild)
+    target.insertBefore(newBoard, target.lastElementChild)
+
+
+    var newName = document.createElement('div');
+    newName.innerHTML = "Name..";
+    newName.className = 'name';
+    newBoard.appendChild(newName)
 
     var newScrollTask = document.createElement('div');
     newScrollTask.className = 'scrolltask';
@@ -19,4 +24,12 @@ function addBoardToMain() {
         newScrollTask.appendChild(task);
     })
 
+}
+
+function renderBoards(target, data) {
+    console.log(target, data);
+
+    for (var board in data) {
+        addBoardToMain(target, board);
+    }
 }
